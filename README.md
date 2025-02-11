@@ -1,67 +1,52 @@
-# Meme Generator
+# Meme Generator 🐶
 
-## Overview
-Meme Generator is a Python-based application that allows users to create memes by overlaying text onto images. It supports multiple file formats for quote extraction, including `.txt`, `.csv`, `.docx`, and `.pdf`. The application provides a command-line interface and a web-based front end using Flask.
+Meme Generator is a final project for the **Intermediate Python Nanodegree** program at Udacity. This project applies advanced Python techniques, including object-oriented programming and modular development, to create an application that allows users to generate memes by overlaying text onto images. It also implements best practices in module creation and dependency management, as covered in the course's "Building Modules" section.
 
 ## Features
-- Extract quotes from `.txt`, `.csv`, `.docx`, and `.pdf` files.
-- Generate memes with dynamically positioned and formatted text.
-- Randomly select quotes and images if not provided.
-- Web-based interface for user-generated memes.
-- Command-line tool to generate memes from specified inputs.
 
-## Setup & Installation
+- **Quote Extraction:** Extracts quotes from `.txt`, `.csv`, `.docx`, and `.pdf` files.
+- **Meme Generation:** Dynamically positions and formats text on images.
+- **Random Selection:** Selects quotes and images randomly if no specific input is provided.
+- **Web Interface:** Built with Flask for user-friendly meme generation.
+- **Command-Line Tool:** Allows meme creation with specified inputs.
 
-### Prerequisites
+## Prerequisites
+
 - Python 3.8+
 - Pip
 
-### Dependencies
-To install the required dependencies, run:
-```bash
-pip install -r requirements.txt
-```
+## Installation
 
-### Running the Application
-To run the web-based application:
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd meme-generator
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Web Interface
+To start the web application, run:
 ```bash
 python app.py
 ```
+Then, open `http://127.0.0.1:5000/` in your browser to generate memes interactively.
 
-To generate a meme using the command-line tool:
+### Command-Line Tool
+Generate a meme by specifying the image path, quote, and author:
 ```bash
 python meme.py --path <image_path> --quote "Your Quote Here" --author "Author Name"
 ```
 
-## Sub-Modules
-### MemeEngine
-- **MemeGenerator**: Handles image processing, text formatting, and meme creation.
-  - `make_meme(img_path, quote_text, quote_author, width=500)`: Generates a meme image with the given text and author.
+## Project Structure
 
-### QuoteEngine
-- **QuoteModel**: Represents a quote with text and an author.
-- **Ingestor**: Abstract base class for different file parsers.
-  - **IngestorTXT**: Handles `.txt` files.
-  - **IngestorCSV**: Handles `.csv` files.
-  - **IngestorDOC**: Handles `.docx` files.
-  - **IngestorPDF**: Handles `.pdf` files using `PyMuPDF`.
+- **MemeEngine:** Handles image processing and text overlay.
+- **QuoteEngine:** Ingests and models quotes from various file formats.
 
-### Web Interface
-- Built with Flask.
-- Provides a random meme generator.
-- Allows users to create custom memes.
-
-## Example Usage
-### Command-Line Example
-```bash
-python meme.py --path "./_data/photos/dog/xander_1.jpg" --quote "Life is beautiful" --author "Anonymous"
-```
-
-### Web-Based Example
-1. Run `python app.py`
-2. Open `http://127.0.0.1:5000/` in your browser.
-3. Generate a random meme or create a custom one using the form.
-
-## License
-This project is licensed under the MIT License.
-
+## Autor
+Antonio Alvarez Delgado
+* [Linkedin](https://www.linkedin.com/in/antonio-alvarez-delgado-0b46451b3/)
